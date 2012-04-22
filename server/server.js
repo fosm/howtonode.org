@@ -1,9 +1,10 @@
 // Just a basic server setup for this site
+//require.paths.unshift('<path_to_node>/lib/node/connect');
 var Stack = require('stack'),
     Creationix = require('creationix'),
     Http = require('http');
 
 Http.createServer(Stack(
   Creationix.log(),
-  require('wheat')(process.env.JOYENT ? process.env.HOME + "/howtonode" : __dirname +"/..")
-)).listen(process.env.JOYENT ? 80 : 8080);
+  require('wheat')()
+)).listen(8089);
